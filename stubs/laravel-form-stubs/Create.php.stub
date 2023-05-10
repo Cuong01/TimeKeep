@@ -1,0 +1,49 @@
+<?php
+
+namespace DumpMyNamespace;
+
+use DumpMyModelNamespace;
+use Hungnm28\LaravelForm\Facades\LaravelForm;
+use Hungnm28\LaravelForm\Traits\WithLaravelFormTrait;
+use Livewire\Component;
+
+class   DumpMyClassName extends Component
+{
+    use WithLaravelFormTrait;
+
+    public DumpMyListFields;
+    protected $rules = [
+        DumpMyRules
+    ];
+
+    public function mount()
+    {
+        $this->authorize("DumpMyPermission.create");
+        $this->done = 1;
+    }
+
+    public function updated($field)
+    {
+        $this->validateOnly($field);
+    }
+
+    public function store()
+    {
+        $this->authorize("DumpMyPermission.create");
+        $this->validate();
+        $data = DumpMyModelClassName::create([
+            DumpMyCreateFields
+        ]);
+        if ($data) {
+            $this->redirectForm("DumpMyRoute", $data->id);
+        }
+    }
+
+    public function render()
+    {
+        lForm()->setTitle("DumpMyPageName");
+        DumpMyBreadcrumb
+        return view("DumpMyModuleSlug::livewire.DumpMyView.DumpMyFileSlug")
+            ->layout('DumpMyModuleSlug::layouts.master', ['title' => 'DumpMyPageName Create']);
+    }
+}

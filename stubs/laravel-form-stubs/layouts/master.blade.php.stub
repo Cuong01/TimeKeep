@@ -1,0 +1,7 @@
+@props(['title'=>'DumpMyModuleHeadName'])
+<x-erp-layout module="DumpMyModuleLowerName" :title="$title">
+    <x-slot:assets>
+
+    </x-slot:assets>
+    {{$slot}}
+</x-erp-layout>

@@ -1,0 +1,11 @@
+{
+    "name": "TimeKeep",
+    "alias": "timekeep",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TimeKeep\\Providers\\TimeKeepServiceProvider"
+    ],
+    "files": []
+}
